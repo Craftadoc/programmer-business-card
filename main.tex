@@ -1,0 +1,133 @@
+\documentclass[11pt,a4paper]{memoir}
+
+\setstocksize{55mm}{85mm} % UK Stock size
+\setpagecc{55mm}{85mm}{*}
+\settypeblocksize{45mm}{75mm}{*}
+\setulmargins{5mm}{*}{*}
+\setlrmargins{5mm}{*}{*}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+
+\setheadfoot{0.1pt}{0.1pt}
+\setheaderspaces{1pt}{*}{*}
+\usepackage{fontspec}
+\setmainfont{EB Garamond} 
+
+\checkandfixthelayout[fixed]
+
+\pagestyle{empty}
+
+\usepackage{pstricks}
+\usepackage{auto-pst-pdf,pst-barcode}
+
+\usepackage{blindtext}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,     
+    urlcolor=cyan,
+}
+
+\usepackage{fontawesome5}
+
+\definecolor{color1bg}{HTML}{96e0fd}
+\definecolor{color2bg}{HTML}{4e4e4e}
+
+\newcommand{\myPicture}{%
+avatars-material-woman-4%<{"type": "crop", "description": "Your picture", "aspect": 1}>
+}
+%<{"type": "group", "description": "Your details"}
+\newcommand{\myName}{%
+Helena Doe%<{"type": "text", "description": "Your full name"}>
+}
+
+\newcommand{\myEmail}{%
+helena@univ.edu%<{"type": "email", "description": "Your email address", "maxLength": 30}>
+}
+
+\newcommand{\myPhoneNumber}{%
++1 123 456 7890%<{"type": "phonenumber", "description": "Your phone number"}>
+}
+\begin{document}
+    \begin{Spacing}{1}%
+    \noindent
+    \textbf{\myName}\\
+    \tiny{subtitle}%<{"type": "text", "description": "Subtitle"}>
+    \hfill {\color{gray}
+    {%
+    \tiny{Division / Employer}%<{"type": "text", "description": "Your business / devision / employer"}>
+    }%
+    }\\ 
+    \rule{\textwidth}{.3mm}\\
+    \begin{minipage}[t]{33mm}
+        \vspace{-0mm}%
+        \includegraphics[height=25mm]{\myPicture}
+    \end{minipage}
+    \hspace{1mm}
+    \begin{minipage}[t]{42mm}
+        \vspace{-0mm}%
+        \begin{flushleft}
+        {\scriptsize
+            \begin{Spacing}{1}%
+            \textbf{Job Title}\\%<{"type": "text", "description": "Job title or role"}>
+            \vspace{1mm}
+            %<{"type": "list", "description": "Your specialties", "minChildren": 1, "maxChildren": 3}
+                %<{"type": "group", "description": "Specialty"}
+                \mbox{Speciality 1}\\%<{"type": "text", "description": "Short description of your specialty"}>
+                %>
+                \mbox{Speciality 2}\\
+                \mbox{Speciality 3}
+            %>
+            \vspace{1mm}\\
+            \end{Spacing}
+        }
+\newcommand{\websiteItem}{{}\\}
+%<{"type": "group", "description": "", "deleteOnEmpty": true}
+\def \websiteUrl {https://fqdn/}%<{"type": "url", "description": "Your website url"}>
+\renewcommand{\websiteItem}{%
+    {\color{gray}website} & 
+    \href{\websiteUrl{}}
+    {\websiteUrl{}}\\
+}
+%>
+
+        {\tiny
+        	\begin{tabular}{ll}
+        	\hspace{-2mm}%
+            	\websiteItem
+            	\hspace{-2mm}%
+            	{\color{gray}email} &
+            	{\myEmail}\\
+            	\hspace{-2mm}%
+            	{\color{gray}mobile} &
+            	{\myPhoneNumber}\\
+            \end{tabular}
+            \vspace*{5mm}
+        }
+        \end{flushleft}
+    \end{minipage}
+%>
+    \rule{74mm}{0mm}\\
+    \texttt{\fontsize{2.84mm}{3.55mm}\selectfont
+    425B 030A B8D2 0316 CA1B 4709 CA83 5DDA EC31 CA56%<{"type": "text", "description": "GPG public key; people can use this to send you private messages which can only be decrypted with your private key. (optional)", "deleteOnEmpty": true}>
+    }
+    \end{Spacing}
+        \begin{Spacing}{1}%
+    \begin{center}
+        \includegraphics[height=25mm]{\myPicture}\\
+        \Large{\myName}
+    \end{center}
+    \end{Spacing}
+        \begin{tikzpicture}[remember picture,overlay]
+        \fill[color2bg] ($(current page.north west)-(0cm, 44mm)$) rectangle (current page.south east);
+    \end{tikzpicture}
+    \mbox{}
+    \vfill
+    \hspace*{\fill}
+        \raisebox{-0.13\height}{\textcolor{white}{\tiny \faIcon[regular]{envelope}}} \textcolor{white}{\tiny{\myEmail}} \quad%
+        \hfill%
+        \raisebox{-0.1\height}{\textcolor{white}{\tiny \faPhone}} \textcolor{white}{\tiny{\myPhoneNumber}} \quad%
+    \hspace*{\fill}
+\end{document}
