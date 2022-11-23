@@ -20,6 +20,7 @@ Clone this repository and use your favorite latex compiler locally. (This templa
 
 ## Example:
 ![business_card_example](./example.png)
+![business_card_example2](./example2.png)
 
 ## Source:
 Original template:
