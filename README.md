@@ -19,7 +19,7 @@ Open the source code in Overleaf: visit [the template page](https://app.craftado
 Clone this repository and use your favorite latex compiler locally. (This template uses XeLatex.)
 
 ## Example:
-![business_card_example](./main.pdf)
+![business_card_example](./example.png)
 
 ## Source:
 Original template:
