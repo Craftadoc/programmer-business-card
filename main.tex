@@ -36,28 +36,28 @@
 \definecolor{color2bg}{HTML}{4e4e4e}
 
 \newcommand{\myPicture}{%
-avatars-material-woman-4%<{"type": "crop", "description": "Your picture", "aspect": 1}>
+avatars-material-woman-4%<{type: "crop", description: "Your picture", aspect: 1}>
 }
-%<{"type": "group", "description": "Your details"}
+%<{type: "group", description: "Your details"}
 \newcommand{\myName}{%
-Helena Doe%<{"type": "text", "description": "Your full name"}>
+Helena Doe%<{type: "text", description: "Your full name"}>
 }
 
 \newcommand{\myEmail}{%
-helena@univ.edu%<{"type": "email", "description": "Your email address", "maxLength": 30}>
+helena@univ.edu%<{type: "email", description: "Your email address", maxLength: 30}>
 }
 
 \newcommand{\myPhoneNumber}{%
-+1 123 456 7890%<{"type": "phonenumber", "description": "Your phone number"}>
++1 123 456 7890%<{type: "phonenumber", description: "Your phone number"}>
 }
 \begin{document}
     \begin{Spacing}{1}%
     \noindent
     \textbf{\myName}\\
-    \tiny{subtitle}%<{"type": "text", "description": "Subtitle"}>
+    \tiny{subtitle}%<{type: "text", description: "Subtitle"}>
     \hfill {\color{gray}
     {%
-    \tiny{Division / Employer}%<{"type": "text", "description": "Your business / devision / employer"}>
+    \tiny{Division / Employer}%<{type: "text", description: "Your business / devision / employer"}>
     }%
     }\\ 
     \rule{\textwidth}{.3mm}\\
@@ -71,11 +71,11 @@ helena@univ.edu%<{"type": "email", "description": "Your email address", "maxLeng
         \begin{flushleft}
         {\scriptsize
             \begin{Spacing}{1}%
-            \textbf{Job Title}\\%<{"type": "text", "description": "Job title or role"}>
+            \textbf{Job Title}\\%<{type: "text", description: "Job title or role"}>
             \vspace{1mm}
-            %<{"type": "list", "description": "Your specialties", "minChildren": 1, "maxChildren": 3}
-                %<{"type": "group", "description": "Specialty"}
-                \mbox{Speciality 1}\\%<{"type": "text", "description": "Short description of your specialty"}>
+            %<{type: "list", description: "Your specialties", minChildren: 1, maxChildren: 3}
+                %<{type: "group", description: "Specialty"}
+                \mbox{Speciality 1}\\%<{type: "text", description: "Short description of your specialty"}>
                 %>
                 \mbox{Speciality 2}\\
                 \mbox{Speciality 3}
@@ -84,14 +84,12 @@ helena@univ.edu%<{"type": "email", "description": "Your email address", "maxLeng
             \end{Spacing}
         }
 \newcommand{\websiteItem}{{}\\}
-%<{"type": "group", "description": "", "deleteOnEmpty": true}
-\def \websiteUrl {https://fqdn/}%<{"type": "url", "description": "Your website url"}>
+\def \websiteUrl {https://fqdn/}%<{type: "url", description: "Your website url"}>
 \renewcommand{\websiteItem}{%
     {\color{gray}website} & 
     \href{\websiteUrl{}}
     {\websiteUrl{}}\\
 }
-%>
 
         {\tiny
         	\begin{tabular}{ll}
@@ -111,7 +109,7 @@ helena@univ.edu%<{"type": "email", "description": "Your email address", "maxLeng
 %>
     \rule{74mm}{0mm}\\
     \texttt{\fontsize{2.84mm}{3.55mm}\selectfont
-    425B 030A B8D2 0316 CA1B 4709 CA83 5DDA EC31 CA56%<{"type": "text", "description": "GPG public key; people can use this to send you private messages which can only be decrypted with your private key. (optional)", "deleteOnEmpty": true}>
+    425B 030A B8D2 0316 CA1B 4709 CA83 5DDA EC31 CA56%<{type: "text", description: "GPG public key (optional)", deleteOnEmpty: true}>
     }
     \end{Spacing}
         \begin{Spacing}{1}%
